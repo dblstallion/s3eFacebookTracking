@@ -75,4 +75,5 @@ void s3eFBAppEventsActivateApp_platform(const char* appId)
     JNIEnv* env = s3eEdkJNIGetEnv();
     jstring appId_jstr = env->NewStringUTF(appId);
     env->CallVoidMethod(g_Obj, g_s3eFBAppEventsActivateApp, appId_jstr);
+    env->DeleteLocalRef(appId_jstr);
 }
